@@ -1,0 +1,127 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    background-color: #c8e4fb;
+    align-content: center;
+    font-family: 'open sans' , sans-serif;
+    color: black;
+    max-width:2000px;
+    min-width: 350px;
+}
+
+a{
+    font-size: 1.3rem;
+    font-family: 'open sans', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+    padding: 0px 0.4rem;
+}
+
+a:hover{
+    color: blue;
+}
+
+.brandlogo{
+    font-family: 'Fredoka One', cursive;
+    font-size: 2rem;
+    font-weight: 300;
+}
+.sep{
+    background-color: black;
+    height: 2rem;
+    width: .15rem;
+    border-radius: 20px;
+}
+            
+.searchbtn{
+    padding: .9rem 3rem;
+    margin: 0rem 1rem;
+    background-color: aqua;
+    color: black;
+    font-family: sans-serif;
+    font-weight: 900;
+}
+.searchbtn:hover{
+    background-color: darkblue;
+    color: white;
+}
+.textsearch{
+    font-size: 1.5rem;
+    background-color: lightgrey;
+    color: black;
+    font-family: sans-serif;
+}
+
+.textsearch:hover{
+    border: 1px solid blue;
+}
+.bodysep{
+    width: 100%;
+    height: 1rem;
+    background-color: darkblue;
+}
+.bodyimage{
+    background-image: url(../img/bodyimage.jpg);
+    max-width:2000px;
+    min-width: 350px;
+    width: 100%;
+    height: 40rem;
+    background-size: cover;
+    position: absolute;   
+    background-position: center;
+}
+
+h1{
+    font-family: 'open sans',sans-serif;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 5rem;
+    font-size: 6rem;
+    color: white;
+}
+h4{
+    font-family: 'open sans',sans-serif;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+    font-size: 2rem;
+    color: white;
+}
+
+.loginbtn{
+    width: 75%;
+    height: 4rem;
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    background-color: #00FF7F;
+    color: black;
+    border-radius: 5px;
+}
+
+.loginbtn:hover{
+    border: 1px solid black;
+    background-color: 	#00FF00; 
+}
+
+.regbtn{
+    width:75%;
+    height: 4rem;
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    font-weight: 800;
+    background-color: #00FF7F;
+    background-color: ;
+    color: black;
+    border-radius: 5px;
+}
+
+.regbtn:hover{
+    border: 1px solid black;
+    background-color: 	#00FF00; 
+}

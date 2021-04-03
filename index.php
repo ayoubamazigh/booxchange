@@ -8,112 +8,14 @@
     
         <link rel='icon' href='assest/img/favicon.png'>
         <link href="assest/css/bootstrap.css" rel="stylesheet" >
-        <link href='assest/css/index.css' rel='stylesheet'>
+        <link href='assest/css/index-style.css' rel='stylesheet'>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Open+Sans:ital,wght@0,300;0,700;0,800;1,300&family=Roboto:ital,wght@0,500;1,300&display=swap" rel="stylesheet">        <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
         
         <style >
-            *{
-                padding: 0px;
-                margin: 0px;
-            }
-            body{
-                background-color: #c8e4fb;
-                align-content: center;
-                font-family: 'open sans' , sans-serif;
-                color: black;
-                max-width:2000px;
-                min-width: 350px;
-            }
-            a{
-                font-size: 1.3rem;
-                font-family: 'open sans', sans-serif;
-                font-weight: 600;
-                text-decoration: none;
-                color: black;
-                padding: 0px 0.4rem;
-            }
-            a:hover{
-                color: blue;
-            }
-            .brandlogo{
-                font-family: 'Fredoka One', cursive;
-                font-size: 2rem;
-                font-weight: 300;
-            }
-            .sep{
-                background-color: black;
-                height: 2rem;
-                width: .15rem;
-                border-radius: 20px;
-            }
-            .searchbtn{
-                padding: .9rem 3rem;
-                margin: 0rem 1rem;
-                background-color: aqua;
-                color: black;
-                font-family: sans-serif;
-                font-weight: 900;
-            }
-            .searchbtn:hover{
-                background-color: darkblue;
-                color: white;
-            }
-            .textsearch{
-                font-size: 1.5rem;
-                background-color: lightgrey;
-                color: black;
-                font-family: sans-serif;
-                
-            }
-            .textsearch:hover{
-                border: 1px solid blue;
-            }
-            .bodysep{
-                width: 100%;
-                height: 1rem;
-                background-color: darkblue;
-            }
-            .bodyimage{
-                background-image: url(assest/img/bodyimage.jpg);
-                max-width:2000px;
-                min-width: 350px;
-                width: 100%;
-                height: 40rem;
-                background-size: cover;
-                position: absolute;   
-                background-position: center;
-            }
-            
-            h1{
-                font-family: 'open sans',sans-serif;
-                font-weight: bold;
-                text-align: center;
-                margin-top: 5rem;
-                font-size: 6rem;
-                color: white;
-            }
-            h4{
-                font-family: 'open sans',sans-serif;
-                font-weight: bold;
-                text-align: center;
-                margin-top: 1rem;
-                margin-bottom: 2rem;
-                font-size: 2rem;
-                color: white;
-            }
-            .loginbtn{
-                width: 50%;
-                height: 3rem;
-                font-family: sans-serif;
-                font-size: 1rem;
-                font-weight: 800;
-                background-color: aqua;
-                color: black;
-                border-radius: 5px;
-            }
+           
         </style>
     <body>
         
