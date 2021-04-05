@@ -227,10 +227,11 @@ h5{
 }
 
 .my-footer-icons{
+    padding: .5rem 0rem;
     color: white;
     font-family: 'open sans', sans-serif;
     font-weight: bold;
-    padding: .5rem 0rem;
+    
     
 }
 
