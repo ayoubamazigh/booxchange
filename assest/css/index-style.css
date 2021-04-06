@@ -74,9 +74,7 @@ h1{
     padding-top: 5rem;
     font-size: 6rem;
     color: white;
-    -webkit-text-fill-color: black;
-    -webkit-text-stroke-width: .01px;
-    -webkit-text-fill-stroke-color: white;
+
 }
 h4{
     font-family: 'open sans',sans-serif;
