@@ -1,0 +1,51 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    background-color: cadetblue;
+}
+
+.my-book{
+    border: 1px solid black;
+    box-shadow: 0px 0px 10px;
+    border-radius: 4px;
+    background-color: aliceblue;
+}
+
+.my-image{
+    width: 90%;
+    height: 300px;
+    margin: 1.8rem auto .2rem auto;
+    background-image: url(picture.jpg);
+    border-radius: 4px 4px 4px 4px;
+    background-size: cover;
+}
+
+.my-book-description{
+    padding-left: 1rem;
+}
+.my-title{
+    margin-bottom: .5rem;
+    text-align: center;
+    font-family: 'open sans', sans-serif;
+    font-size: 1.5rem;
+
+}
+.my-discription{
+    padding: 0rem .5rem 0rem .5rem;
+    font-family: 'roboto', sans-serif;
+    font-size: 1.3rem;
+}
+
+.my-additionall-data{
+    margin: .5rem 0rem;;
+    
+}
+
+.my-by{
+    padding-left: .5rem;
+    margin-top: .3rem;
+    font-family: 'open sans', sans-serif;
+    font-size: 1rem;
+}

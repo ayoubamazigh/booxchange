@@ -107,7 +107,7 @@ h4{
     height: 4rem;
     font-family: 'roboto', sans-serif;
     font-size: 1.5rem;
-    font-weight: 400;
+    font-weight: 600;
     background-color: #20B2AA;
     background-color: ;
     color: black;
@@ -122,7 +122,7 @@ h4{
 .passwordresetlink{
     color: white;
     font-family: 'open sans', sans-serif'';
-    font-weight: 300;
+    font-weight: 400;
     margin-left: 6%;
     text-decoration: underline;
 }
