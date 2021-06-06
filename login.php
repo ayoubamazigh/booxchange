@@ -1,5 +1,5 @@
 <?php
-
+    $exception = Null;
     session_start();
     if(isset($_SESSION['username']) && isset($_SESSION['password'])){
         header('Location: home.php');
@@ -34,7 +34,7 @@
     }else if(isset($_POST['username']) && isset($_POST['password'])){
          $username = $_POST['username'];
          $password = $_POST['password'];
-
+        
          if(!empty($username) && !empty($password)){
              $localhost = 'localhost';
              $user = 'root';
@@ -44,21 +44,29 @@
 
              if($connection){
                  $db = mysqli_select_db($connection, $database);
-
+                 
                  if($db){
-                    $query = "SELECT * FROM accounts WHERE username='$username' AND password='$password' LIMIT 1;";
+                    $password = md5($password);
+                    $query = "SELECT email, password FROM Accounts WHERE email='$username' AND password='$password' LIMIT 1;";
                     $result = mysqli_query($connection, $query);
                     $row = mysqli_fetch_array($result);
                     try{
-                        if($row['username'] == $username && $row['password'] == $password){
-                            if(isset($_POST['rememberme']) && !empty($_POST['rememberme'])){
-                            $time = 60 * 60 * 24 * 7;
-                            setcookie('username', "$username", time() + $time);
-                            setcookie('password', "$password", time() + $time);
+                        if($row[0] == $username && $row[1] == $password){
+                            $query = "SELECT * FROM Accounts where email ='$username' and password= '$password' and Enabled = 1 LIMIT 1";
+                            $result = mysqli_query($connection,$query);
+                            $num_rows = mysqli_num_rows($result);
+                            if($num_rows == 1){
+                                if(isset($_POST['rememberme']) && !empty($_POST['rememberme'])){
+                                $time = 60 * 60 * 24 * 7;
+                                setcookie('username', "$username", time() + $time);
+                                setcookie('password', "$password", time() + $time);
+                                }
+                                $_SESSION['username'] = $username;
+                                $_SESSION['password'] = $password;
+                                header('Location: home.php');
+                            }else{
+                                echo "verifier votre compt par email";
                             }
-                            $_SESSION['username'] = $username;
-                            $_SESSION['password'] = $password;
-                            header('Location: home.php');
                         }else{
                             header('location: login.php');
                         }
@@ -66,6 +74,8 @@
                         header('location: login.php');
                     }
                  }
+             }else{
+                 $exception .= "<p>Problems Connecting to the server :/</p>";
              }
          }
 
@@ -108,6 +118,8 @@
                     <button type="submit" class="my-btn" >
                         Connexion    
                     </button>
+                        <div>
+                        </div>
                     <div class='my-checkbox'>               
                         <input type="checkbox" name='rememberme' value='true' id='chbox'><label for='chbox' >&nbsp;souviens-toi de moi</label>
                     </div>

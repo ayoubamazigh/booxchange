@@ -27,7 +27,7 @@
                 
                 <ul class='navbar-nav mx-auto' style="margin-left: 0;">
                     <li class='nav-items p-1'>
-                        <a href='#'  >Accuile</a>
+                        <a href='home.php'  >Accuile</a>
                     </li>
                     <li class='nav-items p-1'>
                         <a href='#' >Services</a>
@@ -53,9 +53,9 @@
                     -->
                 </ul>
                 <form class='form-inline d-flex'>
-                    <a href='#' class=' texttext'>Se Connecter</a>
+                    <a href='login.php' class=' texttext'>Se Connecter</a>
                     <div class='sep2'></div>
-                    <a href='#' class='texttext'>Inscrivez-vous</a>
+                    <a href='reg.php' class='texttext'>Inscrivez-vous</a>
                 </form>
             </div>
             
@@ -71,10 +71,10 @@
                 <div class='container'>
                     <div class="row">
                         <div class='col-6'>
-                            <center><button  class="loginbtn">Connexion</button></center>
+                            <center><a href="login.php"><button  class="loginbtn">Connexion</button></a></center>
                         </div>
                         <div class='col-6'>
-                            <center><button class="regbtn">S'inscrire</button></center>
+                            <center><a href="reg.php" ><button class="regbtn">S'inscrire</button></a></center>
                         </div>
                     </div>
                     <div class='row'>
@@ -153,13 +153,12 @@
                 </div>
             </div>
         </div>
-        
+        </div>
     
         
         <div class="col-md-12 text-center bg-danger text-dark copyrightbanner">
             Copyright BOOXCHANGE © 2021. All rights reserved.
         </div>
-        
         
         
         

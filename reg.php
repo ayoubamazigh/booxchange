@@ -31,15 +31,17 @@
                  }
              }
         
-    }else if(isset($_POST['firstname']) && isset($_POST['lastname'])  && isset($_POST['date'])  && isset($_POST['email'])  && isset($_POST['password1'])  && isset($_POST['password2'])){
+    }else if(isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['phone']) && isset($_POST['date'])  && isset($_POST['email'])  && isset($_POST['password1']) && isset($_POST['chk']) && isset($_POST['password2'])){
          $firstname = $_POST['firstname'];
          $lastname = $_POST['lastname'];
          $date = $_POST['date'];
          $email = $_POST['email'];
          $password1 = $_POST['password1'];
          $password2 = $_POST['password2'];
+         $phone =  $_POST['phone'];
+         $gender = $_POST['chk'];
 
-         if(!empty($firstname) && !empty($lastname) && !empty($date) && !empty($email) && !empty($password1) && !empty($password2)){
+         if(!empty($firstname) && !empty($lastname) && !empty($date) && !empty($email) && !empty($password1) && !empty($password2) && !empty($phone) && !empty($gender)){
              $localhost = 'localhost';
              $user = 'root';
              $pass = '';
@@ -48,32 +50,36 @@
 
              if($connection){
                  $db = mysqli_select_db($connection, $database);
-
                  if($db){
-                    $query = "INSERT INTO Acounts VALUES('',)";
-                    $result = mysqli_query($connection, $query);
-                    $row = mysqli_fetch_array($result);
-                    try{
-                        if($row['username'] == $username && $row['password'] == $password){
-                            if(isset($_POST['rememberme']) && !empty($_POST['rememberme'])){
-                            $time = 60 * 60 * 24 * 7;
-                            setcookie('username', "$username", time() + $time);
-                            setcookie('password', "$password", time() + $time);
-                            }
-                            $_SESSION['username'] = $username;
-                            $_SESSION['password'] = $password;
-                            header('Location: home.php');
-                        }else{
-                            header('location: login.php');
-                        }
-                    }catch(Exception $ex){
-                        header('location: login.php');
+                    $query = "INSERT INTO USER VALUES ('$firstname','$lastname','$date','$email','$phone','$gender','null')";
+                    mysqli_query($connection, $query);
+                    $vkey = md5(time() . $email . $firstname);
+                    $password = md5($password1);
+                    $query = "INSERT INTO Accounts values('$email','$password','$vkey',0)";
+                    $inserted = mysqli_query($connection, $query);
+                    if($inserted){
+                        $to = $email;
+                        $subject = "Email Verification";
+                        $message = "Tanks for useing our website <br> please clic the link below to verifie your account :) <br>";
+                        $message .= "<a href='http://localhost/booxchange/Verification/verification.php?vkey=$vkey' >Verifie my account</a>";
+                        $headers = "FROM BOOXCHANGE@gmail.com";
+                        $headers .= "MIME-Vesion: 1.0" . "\r\n";
+                        $headers .= "Content-type:text/html; charset=UTF-8" . "\r\n";
+                        
+                        echo "skljfksj";
+                        // mail($to,$subject,$message,$headers);
+                        header('Location: tankyou.html');
+                        
+                    }else{
+                        echo 'errour';
                     }
-                 }
+                     
+                     
+                    
+                }
              }
-         }
-
-     }else{
+        }
+             }else{
         $html = <<<HTML
         <!DOCTYPE HTML>
 
@@ -101,11 +107,11 @@
                     <div class='my-connexion'>Registration</div>
                     <div class='my-input-explainer' >First Name:</div>
                     <div >
-                        <input class='my-input' type="text" name='firstname' placeholder='Enter your first name'>
+                        <input class='my-input' type="text" name='firstname' placeholder='Enter your first name' required>
                     </div>
                     <div class='my-input-explainer' >Last Name:</div>
                     <div >
-                        <input class='my-input' type="text" name='lastname' placeholder='Enter your last name'>
+                        <input class='my-input' type="text" name='lastname' placeholder='Enter your last name' required>
                     </div>
                     <div class='my-input-explainer' >Date of Birth:</div>
                     <div >
@@ -113,19 +119,24 @@
                     </div>
                     <div class='my-input-explainer' >Email:</div>
                     <div >
-                        <input class='my-input' type="Email" name='email' placeholder='Enter your Email'>
+                        <input class='my-input' type="Email" name='email' placeholder='Enter your Email' required>
+                    </div>
+                    <div class='my-input-explainer' >Telephone:</div>
+                    <div >
+                        <input class='my-input' type="text" name='phone' placeholder='Enter your phone number' >
                     </div>
                     <div class='my-input-explainer' >Password:</div>
                     <div >
-                        <input class='my-input' type="Password" name='password1' placeholder='Enter your password'>
+                        <input class='my-input' type="Password" name='password1' placeholder='Enter your password' required>
                     </div>
                     <div class='my-input-explainer' >Repeate password:</div>
                     <div >
-                        <input class='my-input' type="password" name='password2' placeholder='Entrez votre password'>
+                        <input class='my-input' type="password" name='password2' placeholder='Entrez votre password' required>
                     </div>
-                    <div >
-                        <div><input class='my-input-radio' type="radio" id='chk' name='chk' value='m'> MALE</div>
-                        <div><input class='my-input-radio' type="radio" id='chk' name='chk' value='f'> FEMALE</div>
+                    <div class='my-input-explainer' >Gender:</div>
+                    <div class='my-gender-box'>
+                        <div><input class='my-input-radio' type="radio" id='chkm' name='chk' value='m'><label for='chkm' >MALE</label></div>
+                        <div><input class='my-input-radio' type="radio" id='chkf' name='chk' value='f'> <label for='chkf' >FEMALE</label></div>
                     </div>
                     <div>
                     <button type="submit" class="my-btn" >
@@ -150,11 +161,6 @@ HTML;
              
              
              
-             
-            
-
-
-     
-     
+    
      
 ?>
