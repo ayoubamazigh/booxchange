@@ -52,7 +52,7 @@
                         <a href='#' >About</a>
                     </li>
                     <li class='nav-items p-1'>
-                        <a  href='#'  >terms</a>
+                        <a  href='#password'  >Insert Un livre</a>
                     </li>
                     <!--
                     <li class='nav-items dropdown'>
@@ -110,7 +110,7 @@
                 <div class="col-md-3">
                     <div class='my-search-name'>Langue:</div>
                     <select class="text-text" name='language' >
-                        <option value='Langue' >Langue</option>
+                        <option value='nan' >Langue</option>
                         <option value='française' >française</option>
                         <option value='Anglais' >Anglais</option>
                         <option value='Espagnol' >Espagnol</option>
@@ -122,7 +122,7 @@
                 <div class="col-md-3">
                     <div class='my-search-name'>Ville:</div>
                     <select class="text-text" name='ville'  >
-                        <option value='Ville' >Ville</option>
+                        <option value='nan' >Ville</option>
                         <option value='Agadir' >Agadir</option>
                         <option value='Beni Mellal' >Beni Mellal</option>
                         <option value='Berkane' >Berkane</option>
@@ -160,8 +160,68 @@
         
         </form>
         
-                    <?php
+             
+        
+    <?php
+        
+        
+        if( isset($_POST['bookname']) || isset($_POST['catigory'])  ||  isset($_POST['language']) || isset($_POST['ville']) ){
+            if( !empty($_POST['bookname']) || !empty($_POST['catigory'] || !empty($_POST['language']) ||  !empty($_POST['ville']) )){
 
+                
+                $query = "SELECT * FROM BOOK WHERE ";
+                $counter = 0;
+                
+                if (isset($_POST['bookname'])) { 
+                    $bookname = $_POST['bookname'];
+                    if(!empty($bookname) && $bookname != 'nan' ){
+                        $query .= "title = '$bookname' ";
+                         $counter = 1;
+                    }
+                }
+                
+                if (isset($_POST['catigory'])) { 
+                    $catigory = $_POST['catigory'];
+                    if(!empty($catigory) && $catigory != 'nan' ){
+                        if($counter == 1){
+                            $query .= " and "; 
+                        }
+                        $query .= "catigory = '$catigory' ";
+                        $counter = 1;
+                    }
+                }
+                
+                if (isset($_POST['language'])) { 
+                    $language = $_POST['language'];
+                    if(!empty($language) && $language != 'nan'){
+                        if($counter == 1){
+                            $query .= " and "; 
+                        }
+                        $query .= "language = '$language' ";
+                        $counter = 1;
+                    }
+                }
+        
+        
+        
+        
+        
+                if (isset($_POST['ville'])) { 
+                    $ville = $_POST['ville'];
+                    if(!empty($ville) && $ville != 'nan'){
+                        if($counter == 1){
+                            $query .= " and "; 
+                        }
+                        $query .= "ville = '$ville' ";
+                        $counter = 1;
+                    }
+                }
+        
+        }
+        }else{
+            $query = "SELECT * FROM Book";
+        }
+        
                 $host = 'localhost';
                 $user = 'root';
                 $pass = '';
@@ -171,8 +231,7 @@
                     if($connection){
                 $db = mysqli_select_db($connection, $database);
                         if($db){
-                $query = "select * from Book";
-
+                            
                 $result = mysqli_query($connection, $query);
 
                 $html = <<<html
@@ -205,6 +264,10 @@
                 echo $html;
                     }
                     }
+        
+        
+        
+        
             ?>
         
         
@@ -213,7 +276,70 @@
         
         
         
-        
+        <div id="password" class="overlay">
+                                <form action='#' method="POST">
+                                    <div class="container">
+                                        
+                                        <div class='row'>
+                                            <div class='col-lg-6 col-md-6 col-xs-12 ' >
+                                                Image: 
+                                            </div>
+                                            <div class='col-lg-6 col-md-6 col-xs-12 ' >
+                                            
+                                            </div>
+                                        </div>
+                                        
+                                        <div class='row'>
+                                            <div class='col-lg-6 col-md-6 col-xs-12 ' >
+                                            
+                                            </div>
+                                            <div class='col-lg-6 col-md-6 col-xs-12 ' >
+                                            
+                                            </div>
+                                        </div>
+                                        <div class='row'>
+                                            <div class='col-lg-6 col-md-6 col-xs-12 ' >
+                                            
+                                            </div>
+                                            <div class='col-lg-6 col-md-6 col-xs-12 ' >
+                                            
+                                            </div>
+                                        </div>
+                                        <div class='row'>
+                                            <div class='col-lg-6 col-md-6 col-xs-12 ' >
+                                            
+                                            </div>
+                                            <div class='col-lg-6 col-md-6 col-xs-12 ' >
+                                            
+                                            </div>
+                                        </div>
+                                        <div class='row'>
+                                            <div class='col-lg-6 col-md-6 col-xs-12 ' >
+                                            
+                                            </div>
+                                            <div class='col-lg-6 col-md-6 col-xs-12 ' >
+                                            
+                                            </div>
+                                        </div>
+                                        <div class='row'>
+                                            <div class='col-lg-6 col-md-6 col-xs-12 ' >
+                                            
+                                            </div>
+                                            <div class='col-lg-6 col-md-6 col-xs-12 ' >
+                                            
+                                            </div>
+                                        </div>
+                                        <div class='row'>
+                                            <div class='col-lg-6 col-md-6 col-xs-12 ' >
+                                            
+                                            </div>
+                                            <div class='col-lg-6 col-md-6 col-xs-12 ' >
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
         
         
         
