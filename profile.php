@@ -81,7 +81,7 @@ session_start();
                 </ul>
                 <form class='form-inline d-flex'>
                     <input class='mini-profile-image' type="image" src='<?php echo  "{$row[6]}"; ?>' >
-                    <a href="clear.php" ><div class='logout' >se déconnecter</div></a>
+                    <a href="clear.php" ><input type="image" class='logout' src="assest/img/logout.png" ></a>
                 </form>
             </div>
             
@@ -286,33 +286,45 @@ session_start();
                             <h5>Changer Date de naissance</h5>
                                 <a class="close" href="#">&times;</a>
                             <div class="content">
-                                <table>
-                                    <tr>
-                                        <td>Date: </td><td><input type='date' ></td>
-                                    </tr>
-                                    <tr>    
-                                        <td colspan='2'><input class='valider2' type='button' value='Valider' ></td>
-                                    </tr>                                
-                                </table>
+                                <form action="Profile/dateupdate.php" method="POST">
+                                    <table>
+                                        <tr>
+                                            <td>Date: </td><td><input type='date' name="date" ></td>
+                                        </tr>
+                                        <tr>    
+                                            <td colspan='2'><input class='valider2' type='submit' value='Valider' ></td>
+                                        </tr>                                
+                                    </table>
+                                </form>
                             </div>
                         </div>
                     </div>
-              
-              
-              
-              <div id="adress" class="overlay">
+                
+                
+                
+                
+                    <div id="adress" class="overlay">
                         <div class="popup">
-                            <h5>Changer l'adress</h5>
+                            <h5>Changer Genre</h5>
                                 <a class="close" href="#">&times;</a>
                             <div class="content">
-                                <table>
-                                    <tr>
-                                        <td>New Adress</td><td><input type='text' placeholder='' ></td>
-                                    </tr>
-                                    <tr>    
-                                        <td colspan='2'><input class='valider2' type='button' value='Valider' ></td>
-                                    </tr>                                
-                                </table>
+                                <form action="Profile/genderupdate.php" method="POST" >
+                                    <table>
+                                        <tr>
+                                            <td>New Gender</td>
+                                            <td>
+                                            <select name="genre" >
+                                                <option value='m' >MALE</option>
+                                                <option value='f' >FEMALE</option>
+                                            </select>
+                                            </td>
+                                        </tr>
+                                        
+                                        <tr>
+                                            <td colspan='2'><input class='valider2' type='submit' value='Valider' ></td>
+                                        </tr>                                
+                                    </table>
+                                </form>
                             </div>
                         </div>
                     </div>
