@@ -1,7 +1,6 @@
 <?php
 
-
-
+error_reporting(0);
 
         $html = <<<HTML
             
@@ -44,16 +43,12 @@
                         </div>
                         <center>
         
-        
         HTML;
 
-
-     if(isset($_GET['er'])){
-         $html .= "<p class='font-size: 2rem;' >Mot de pass et incorect</p>";
-     }
-
-
-
+        if(isset($_GET['P'])){
+            $html .= "<p class='font-size: 1.4rem;color:red;' >Incorect Password</p>";
+        }
+           
 
 
 
@@ -73,11 +68,11 @@
             $db = mysqli_select_db($connection, $database);
                  
             if($db){
-                $query = "SELECT * FROM accounts WHERE username='$username' AND password='$password' LIMIT 1;";
+                $query = "SELECT * FROM accounts WHERE email='$username' AND password='$password' LIMIT 1;";
                 $result = mysqli_query($connection, $query);
                 $row = mysqli_fetch_array($result);
                 try{
-                    if($row['username'] == $username && $row['password'] == $password){
+                    if($row['email'] == $username && $row['password'] == $password){
                         $_SESSION['username'] = $username;
                         $_SESSION['password'] = $password;
                         header('Location: home.php');
@@ -125,7 +120,7 @@
                                 echo "verifier votre compt par email";
                             }
                         }else{
-                            header('Location: login.php?er=1');
+                            header("Location: login.php?P=1");
                         }
                     }catch(Exception $ex){
                         header('location: login.php');
@@ -138,7 +133,7 @@
              $exception .= "l'e-mail et le mot de passe sont requis"; 
              header('location: login.php');
          }
-
+    
      }else{
 
                 $html .= <<<HTML

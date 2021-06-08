@@ -12,12 +12,6 @@ body{
     min-width: 350px;
 }
 
-p{
-    text-align: center;
-    font-size: 2rem;
-    font-family: 'open sans', cursive;
-    color: red;
-}
 
 h2{
     margin-top: .5rem;
