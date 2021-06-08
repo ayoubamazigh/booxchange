@@ -1,5 +1,62 @@
 <?php
-    $exception = Null;
+
+
+
+
+        $html = <<<HTML
+            
+            <html lang='fr'>
+            <head>
+                <title>Booxchange.com</title>
+                <meta charset='utf-8' />
+            </head>
+    
+        <link rel='icon' href='assest/img/favicon.png'>
+        <link href="assest/css/bootstrap.css" rel="stylesheet" >
+        <link href='assest/css/login-style.css' rel='stylesheet'>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">  
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">        
+        <body>
+            <form action="#" method="POST">
+                <h2 class='my-title'>Login Page</h2>
+            <div class='container my-login-container'>
+                <div class='row'>
+                    <div class='col-md-12 col-sm-6 col-lg-6 col-xs-12 p-0'>
+                        <div class='my-login-image' ></div>
+                    </div>
+                    <div class='col-md-12 col-sm-6 col-lg-6 col-xs-12 my-login-side-container'>
+                        <div class='my-connexion'>Connexion</div>
+                    <div class='my-input-explainer' >Username:</div>
+                    <div >
+                        <input class='my-input' type="text" name='username' placeholder='Entrez votre Username' required>
+                    </div>
+                    <div class='my-input-explainer' >Mot de pass:</div>
+                    <div >
+                        <input class='my-input' type="text" name='password' placeholder='Entrez votre mot de pass' required>
+                    </div
+                    <div>
+                    <button type="submit" class="my-btn" >
+                        Connexion    
+                    </button>
+                        <div>
+                        </div>
+                        <center>
+        
+        
+        HTML;
+
+
+     if(isset($_GET['er'])){
+         $html .= "<p class='font-size: 2rem;' >Mot de pass et incorect</p>";
+     }
+
+
+
+
+
+
     session_start();
     if(isset($_SESSION['username']) && isset($_SESSION['password'])){
         header('Location: home.php');
@@ -68,7 +125,7 @@
                                 echo "verifier votre compt par email";
                             }
                         }else{
-                            header('location: login.php');
+                            header('Location: login.php?er=1');
                         }
                     }catch(Exception $ex){
                         header('location: login.php');
@@ -77,57 +134,24 @@
              }else{
                  $exception .= "<p>Problems Connecting to the server :/</p>";
              }
+         }else{
+             $exception .= "l'e-mail et le mot de passe sont requis"; 
+             header('location: login.php');
          }
 
      }else{
-        $html = <<<HTML
-        <!DOCTYPE HTML>
 
-<html lang='fr'>
-    <head>
-        <title>Booxchange.com</title>
-        <meta charset='utf-8' />
-    </head>
-    
-        <link rel='icon' href='assest/img/favicon.png'>
-        <link href="assest/css/bootstrap.css" rel="stylesheet" >
-        <link href='assest/css/login-style.css' rel='stylesheet'>
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">  
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">        
-    <body>
-        <form action="#" method="POST">
-            <h2 class='my-title'>Login Page</h2>
-        <div class='container my-login-container'>
-            <div class='row'>
-                <div class='col-md-12 col-sm-6 col-lg-6 col-xs-12 p-0'>
-                    <div class='my-login-image' ></div>
-                </div>
-                <div class='col-md-12 col-sm-6 col-lg-6 col-xs-12 my-login-side-container'>
-                    <div class='my-connexion'>Connexion</div>
-                    <div class='my-input-explainer' >Username:</div>
-                    <div >
-                        <input class='my-input' type="text" name='username' placeholder='Entrez votre Username'>
-                    </div>
-                    <div class='my-input-explainer' >Mot de pass:</div>
-                    <div >
-                        <input class='my-input' type="text" name='password' placeholder='Entrez votre mot de pass'>
-                    </div>
-                    <div>
-                    <button type="submit" class="my-btn" >
-                        Connexion    
-                    </button>
-                        <div>
-                        </div>
+                $html .= <<<HTML
+         
+                       </center>
                     <div class='my-checkbox'>               
                         <input type="checkbox" name='rememberme' value='true' id='chbox'><label for='chbox' >&nbsp;souviens-toi de moi</label>
                     </div>
                     <div class='my-input-link'>               
-                        <a class='my-link' href="#" >j'ai oublié le mot de pass.</a>
+                        <a class='my-link' href="resetpassword.php" >j'ai oublié le mot de pass.</a>
                     </div>
                     <div class='my-input-link mt-5 mb-3'>
-                        <a class='my-link' href="#" ><center>Vous n'êtes pas membre?</center></a>
+                        <a class='my-link' href="reg.php" ><center>Vous n'êtes pas membre?</center></a>
                     </div>
                     </div>
                 </div>
@@ -137,19 +161,7 @@
     </body>
 </html>
 HTML;
-        echo $html;
+            echo $html;
     }
-             
-             
-             
-             
-             
-             
-             
-            
-
-
-     
-     
      
 ?>

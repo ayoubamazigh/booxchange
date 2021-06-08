@@ -51,8 +51,31 @@
     border-radius: 4px;
     background-color: aliceblue;
 }
+.my-insert-title{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-family: 'open sans', sans-serif;
+    font-size: 2rem;
+}
 
+.my-description{
+    margin-top: .1rem;
+    margin-right: .1rem;
+    margin-bottom: .4rem;
+    font-family: 'open sans', sans-serif;
+    font-size: 1.1rem;
+}
 
+.my-description-input{
+    width: 100%;
+}
+.my-descriptiontttt{
+    width: 18rem;
+    height: 4rem;
+}
+.tttt{
+    width: 100%;
+}
 
 .my-image{
     width: 90%;

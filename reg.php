@@ -143,7 +143,7 @@
                         Register    
                     </button>
                     <div class='my-input-link mt-3 mb-2'>
-                        <a class='my-link' href="#" ><center>I alredy have an account</center></a>
+                        <a class='my-link' href="login.php" ><center>I alredy have an account</center></a>
                     </div>
                     </div>
                 </div>
