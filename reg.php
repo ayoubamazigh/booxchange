@@ -28,39 +28,39 @@ error_reporting(0);
                                 <div class='my-login-image' ></div>
                             </div>
                             <div class='col-md-12 col-sm-12 col-lg-7 col-xs-12 my-login-side-container'>
-                                <div class='my-connexion'>Registration</div>
-                                <div class='my-input-explainer' >First Name:</div>
+                                <div class='my-connexion'>Inscription</div>
+                                <div class='my-input-explainer' >Prénom:</div>
                                 <div >
-                                    <input class='my-input' type="text" name='firstname' placeholder='Enter your first name' required>
+                                    <input class='my-input' type="text" name='firstname' placeholder='Tapez votre prénom' required>
                                 </div>
-                                <div class='my-input-explainer' >Last Name:</div>
+                                <div class='my-input-explainer' >Nom:</div>
                                 <div >
-                                    <input class='my-input' type="text" name='lastname' placeholder='Enter your last name' required>
+                                    <input class='my-input' type="text" name='lastname' placeholder='Tapez votre nom' required>
                                 </div>
-                                <div class='my-input-explainer' >Date of Birth:</div>
+                                <div class='my-input-explainer' >Date de naissance:</div>
                                 <div >
                                     <input class='my-input' type="date" name='date' required>
                                 </div>
-                                <div class='my-input-explainer' >Email:</div>
+                                <div class='my-input-explainer' >E-mail:</div>
                                 <div >
-                                    <input class='my-input' type="Email" name='email' placeholder='Enter your Email' required>
+                                    <input class='my-input' type="E-mail" name='email' placeholder='Tapez votre e-mail' required>
                                 </div>
-                                <div class='my-input-explainer' >Telephone:</div>
+                                <div class='my-input-explainer' >Téléphone:</div>
                                 <div >
-                                    <input class='my-input' type="text" name='phone' placeholder='Enter your phone number' required>
+                                    <input class='my-input' type="text" name='phone' placeholder='tapez votre numéro de téléphone' required>
                                 </div>
-                                <div class='my-input-explainer' >Password:</div>
+                                <div class='my-input-explainer' >Mot de passe:</div>
                                 <div >
-                                    <input class='my-input' type="Password" name='password1' placeholder='Enter your password' required>
+                                    <input class='my-input' type="Password" name='password1' placeholder='tapez votre mot de passe' required>
                                 </div>
-                                <div class='my-input-explainer' >Repeate password:</div>
+                                <div class='my-input-explainer' >Retaper votre mot de passe:</div>
                                 <div >
-                                    <input class='my-input' type="password" name='password2' placeholder='Entrez votre password' required>
+                                    <input class='my-input' type="password" name='password2' placeholder='conformez votre mot de passe' required>
                                 </div>
-                                <div class='my-input-explainer' >Gender:</div>
+                                <div class='my-input-explainer' >Genre:</div>
                                 <div class='my-gender-box'>
-                                    <div><input class='my-input-radio' type="radio" id='chkm' name='chk' value='m'><label for='chkm' >MALE</label></div>
-                                    <div><input class='my-input-radio' type="radio" id='chkf' name='chk' value='f'> <label for='chkf' >FEMALE</label></div>
+                                    <div><input class='my-input-radio' type="radio" id='chkm' name='chk' value='m'><label for='chkm' >Homme</label></div>
+                                    <div><input class='my-input-radio' type="radio" id='chkf' name='chk' value='f'> <label for='chkf' >Femme</label></div>
                                 </div>
                                 <div>
                                 <button type="submit" class="my-btn" >
@@ -190,10 +190,10 @@ error_reporting(0);
                                 $subject = "Email Verification";
                                 $message = "Tanks for useing our website <br> please clic the link below to verifie your account :) <br>";
                                 $message .= "<a href='http://localhost/booxchange/Verification/verification.php?vkey=$vkey' >Verifie my account</a>";
-                                $headers = "FROM BOOXCHANGE@gmail.com";
+                                $headers = "from: booxchange101@gmail.com";
                                 $headers .= "MIME-Vesion: 1.0" . "\r\n";
                                 $headers .= "Content-type:text/html; charset=UTF-8" . "\r\n";
-                                // mail($to,$subject,$message,$headers);
+                                mail($to,$subject,$message,$headers);
                                 header('Location: reg.php#thankyou');
                                 
                             }else{
@@ -249,7 +249,7 @@ error_reporting(0);
         $html .= <<<HTML
         
                                 <div class='my-input-link mt-3 mb-2'>
-                                    <a class='my-link' href="login.php" ><center>I alredy have an account</center></a>
+                                    <a class='my-link' href="login.php" ><center>Je ai déjà un compte</center></a>
                                 </div>
                                 </div>
                             </div>

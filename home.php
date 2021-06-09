@@ -7,10 +7,6 @@
     }
 ?>
 
-
-
-
-
 <!DOCTYPE HTML>
 
 <html lang='fr'>
@@ -43,16 +39,16 @@
                 
                 <ul class='navbar-nav mx-auto' style="margin-left: 0;">
                     <li class='nav-items p-1'>
-                        <a href='#'  >Accuile</a>
+                        <a href='index.php'  >Accuile</a>
                     </li>
                     <li class='nav-items p-1'>
-                        <a href='#' >Services</a>
+                        <a href='home.php' >Page principale</a>
                     </li>
                     <li class='nav-items p-1'>
-                        <a href='#deletebook' >Delete book</a>
+                        <a href='#deletebook' >Supprimer Livre</a>
                     </li>
                     <li class='nav-items p-1'>
-                        <a  href='#password'  >Insert Un livre</a>
+                        <a  href='#password'  >Ajouter livre</a>
                     </li>
                     <!--
                     <li class='nav-items dropdown'>
@@ -69,11 +65,10 @@
                     -->
                 </ul>
                 <form class='form-inline d-flex'>
-                    <input class='mini-profile-image' type="image" src='Uploaded/1.jpg' >
-                     <a href="clear.php" ><input type="image" class='logout' src="assest/img/logout.png" ></a>
+                    <input class='mini-profile-image' type="image" src='assest/img/male.png' >
+                    <a href="clear.php" ><div class='logout'>Déconnexion </div></a>
                 </form>
             </div>
-            
         </nav>
         <div class='bodysep'></div>
            
@@ -154,11 +149,7 @@
                 <center><input class=" btn-btn col-4 btn bg-info mt-2" type="submit" value="Rechercher"></center>
             </div>
         </div>
-        
-        
-        
-        
-        </form>
+</form>
         
              
         
@@ -168,7 +159,6 @@
         if( isset($_POST['bookname']) || isset($_POST['catigory'])  ||  isset($_POST['language']) || isset($_POST['ville']) ){
             if( !empty($_POST['bookname']) || !empty($_POST['catigory'] || !empty($_POST['language']) ||  !empty($_POST['ville']) )){
 
-                
                 $query = "SELECT * FROM BOOK WHERE ";
                 $counter = 0;
                 
@@ -250,6 +240,7 @@
             <div class='my-by'>Catigory: {$row[4]}</div>
             <div class='my-by'>Language: {$row[5]}</div>
             <div class='my-by'>Ville: {$row[7]}</div>
+            <div class='my-by'><center><a  href='Pofile-user.php?email={$row[8]}'>Owner profile</a></center></div>
             </div>
             </div>
             </div>
@@ -261,10 +252,6 @@
                 echo $html;
                     }
                     }
-        
-        
-        
-        
             ?>
         
         
@@ -278,7 +265,7 @@
                                     <div class="container">
                                         <div class="popup">
                                         <a class="close" href="#">&times;</a>
-                                            <center class='my-insert-title' >Creation d'un livre</center>
+                                            <center class='my-insert-title' > Création d'un livre</center>
                                         <div class='row'>
                                             <div class='my-description col-lg-2 col-md-2 col-xs-12 ' >
                                                 Image: 
@@ -307,7 +294,7 @@
                                         </div>
                                         <div class='row'>
                                             <div class='my-description col-lg-2 col-md-2 col-xs-12 ' >
-                                                Author:
+                                                Auteur:
                                             </div>
                                             <div class='col-lg-10 col-md-10 col-xs-12 ' >
                                                 <input class="tttt" type='text' name="livre-author" placeholder='titre du livre' >
@@ -315,11 +302,11 @@
                                         </div>
                                         <div class='row'>
                                             <div class='my-description col-lg-2 col-md-2 col-xs-12 ' >
-                                                Catigory:
+                                                Category:
                                             </div>
                                             <div class='col-lg-10 col-md-10 col-xs-12 ' >
                                                 <select class="tttt" class="text-text" name='livre-catigory'  >
-                                                    <option value="nan" >Catigory</option>
+                                                    <option value="nan" >Category</option>
                                                     <option value="art" >Art</option>
                                                     <option value="bandes dessinée" >Bandes dessinée</option>
                                                     <option value="Cuisine" >Cuisine</option>
@@ -419,14 +406,14 @@
         
         <div id="deletebook" class="overlay">
                         <div class="popup">
-                            <h5>Supprimer Livre</h5>
+                            <center><h5>Supprimer Livre</h5></center>
                                 <a class="close" href="#">&times;</a>
                             <div class="content">
                                 <form action='#' method='POST'>
                                 <table>
                                     <tr>
                                         <td ><div class="my-search-name" >Livre:</div></td><td>
-                                            <select class="" name='select-delete-book'>
+                                            <select name='select-delete-book'>
                                                 <?php
                                                     $host = 'localhost';
                                                     $user = 'root';
@@ -437,11 +424,12 @@
                                                         if($connection){
                                                                 $db = mysqli_select_db($connection, $database);
                                                             if($db){  
-                                                                $query = "SELECT id, titre FROM BOOK";
+                                                                $code_user_delete = $_SESSION['username'];
+                                                                $query = "SELECT id, titre FROM BOOK where code_user = '$code_user_delete' ";
                                                                 $result = mysqli_query($connection, $query);
 
                                                                 while($row = mysqli_fetch_array($result)){
-                                                                    echo "<option  value='{ $row[0] }' >{ $row[1] }</option>";
+                                                                    echo "<option  value=' $row[0] ' >{ $row[1] }</option>";
                                                 
                                                                 }
                                                             }
@@ -450,7 +438,7 @@
                                         
                                         
                                         
-                                            </select>
+                                                </select>
                                         </td>
                                     </tr>
                                     <tr>    
@@ -462,7 +450,36 @@
                         </div>
                     </div>
         
+        <?php
+
+            if(isset($_POST['select-delete-book'])){
+                $selectdeletebook = $_POST['select-delete-book'];
+                if(!empty($selectdeletebook)){
+                    $host = 'localhost';
+                    $user = 'root';
+                    $pass = '';
+                    $database = 'booxchange';
+                    $connection = mysqli_connect($host, $user, $pass);
+                    if($connection){
+                        $db = mysqli_select_db($connection, $database);
+                        if($db){  
+                            $code_user = $_SESSION['username'];
+                            $query = "Delete FROM Book where code_user = '$code_user' and id = $selectdeletebook ";
+                            $result = mysqli_query($connection, $query);
+                            if($result){
+                                echo "<script> alert('book deleted avec success'); </script>";
+                                header('Location: home.php');
+                            }
+                        }
+                    }
+                }
+            }
         
+        
+        
+        
+        
+        ?>
         
         
         
@@ -496,7 +513,8 @@
             $livrelanguage = $_POST['livre-language'];
             $livreville = $_POST['book-ville'];
             $username = $_SESSION['username'];
-            
+                            echo $titrelivre . $description . $livreauthor . $livrecatigory . $livrelanguage . $livreville;
+
             if(!empty($titrelivre) && !empty($description) && !empty($livreauthor) && !empty($livrecatigory) && !empty($livrelanguage) && !empty($livreville)){
                 
                 $imgname = $_FILES['my-image']['name'];
@@ -514,7 +532,6 @@
                             $newimgname = uniqid("IMG-", true) . "." . $imgextention;
                             $imguploadpath = "Uploaded/" . $newimgname;
                             move_uploaded_file($imgpath, $imguploadpath);
-                            //echo $titrelivre . $description . $livreauthor . $livrecatigory . $livrelanguage . $livreville;
                             $localhost = 'localhost';
                             $user = 'root';
                             $pass = '';
@@ -527,9 +544,9 @@
                                     $query = "INSERT INTO BOOK (titre, description,author, catigory, language, picture, ville, code_user) VALUES ('$titrelivre','$description','$livreauthor','$livrecatigory','$livrelanguage','$imguploadpath','$livreville','$username')";
                                     $inserted = mysqli_query($connection, $query);
                                         if($inserted){
-                                            header('Location: home.php');
+                                            echo "<script> alert('Livre a ete inserer avec succes')</script>";
                                         }else{
-                                            echo 'errour';
+                                            echo "<script> alert('livre n'est pas inserez')</script>";
                                         }
                                 }
                             }    
@@ -554,5 +571,3 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
     </body>
 </html>
-        
-        

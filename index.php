@@ -79,7 +79,7 @@
                     </div>
                     <div class='row'>
                         <div class='col-12'>
-                            <a class='passwordresetlink' href="resetpassword.php">Forget your password?</a>
+                            <a class='passwordresetlink' href="resetpassword.php">mot de passe oublié?</a>
                         </div>
                     </div>
                 </div>
@@ -108,7 +108,7 @@
         <div class='container bg-dark my-footer'>
             <div class="row p-1">
                 <div class=' col-md-12 col-sm-4 col-lg-4 col-xs-12 my-footer-col'>
-                    ABOUT US
+                    à Propos de nous
                     <div class='footersep'></div>
                     <div class='footer-description'>
                         <h5>BOOXCHANGE</h5>
@@ -116,7 +116,7 @@
                     </div>
                 </div>
                 <div class=' col-md-12 col-sm-4 col-lg-4 col-xs-12 my-footer-col'> 
-                    Get Srarted
+                    Commencer
                     <div class='footersep' ></div>
                     <div class='footer-description'>
                         <p style='margin-top: 1.3rem;'>Connectez-vous maintenant et rejoignez notre communauté gratuitement</p>
@@ -157,7 +157,7 @@
     
         
         <div class="col-md-12 text-center bg-danger text-dark copyrightbanner">
-            Copyright BOOXCHANGE © 2021. All rights reserved.
+            Copyright BOOXCHANGE © 2021. Tous les droits sont réservés.
         </div>
         
         

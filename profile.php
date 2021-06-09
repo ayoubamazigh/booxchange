@@ -1,4 +1,7 @@
 <?PHP
+
+error_reporting(0);
+
 session_start();
     if(isset($_SESSION['username']) && isset($_SESSION['password'])){
         $localhost = 'localhost';
@@ -17,6 +20,8 @@ session_start();
                 
             }
         }
+    }else{
+        header('Location: login.php');
     }
 
 ?>
@@ -54,16 +59,10 @@ session_start();
                 
                 <ul class='navbar-nav mx-auto' style="margin-left: 0;">
                     <li class='nav-items p-1'>
-                        <a href='#'  >Accuile</a>
+                        <a href='index.php'  >Accuile</a>
                     </li>
                     <li class='nav-items p-1'>
-                        <a href='#' >Services</a>
-                    </li>
-                    <li class='nav-items p-1'>
-                        <a href='#' >About</a>
-                    </li>
-                    <li class='nav-items p-1'>
-                        <a  href='#'  >terms</a>
+                        <a href='home.php' >Page Principale</a>
                     </li>
                     <!--
                     <li class='nav-items dropdown'>
@@ -81,7 +80,7 @@ session_start();
                 </ul>
                 <form class='form-inline d-flex'>
                     <a href="profile.php" ><input class='mini-profile-image' type="image" src='<?php if($row[5] == "f"){ echo "assest/img/OIP.jpg"; }else{ echo "assest/img/male.png"; } ?>' ></a>
-                    <a href="clear.php" ><div class="logout" >Log out</div></a>
+                    <a href="clear.php" ><div class="logout" >Déconnexion</div></a>
                 </form>
             </div>
             
@@ -104,7 +103,7 @@ session_start();
                         <img src="<?php if($row[5] == "f"){ echo "assest/img/OIP.jpg"; }else if($row[5] == 'm'){ echo "assest/img/male.png"; } ?>  " alt="profile picture" class="rounded-circle main-profile-picture">
                         <div class="mt-0">
                           <h4 class="main-name"><?php echo  "{$row[0]} {$row[1]}"; ?></h4>
-                          <p class="text-secondary mb-1">Booxchange WebSite</p>
+                          <p class="text-secondary mb-1">Booxchange Site Web</p>
                         </div>
                       </div>
                     </div>
@@ -124,7 +123,7 @@ session_start();
                       
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Email</h6>
+                      <h6 class="mb-0">E-mail:</h6>
                     </div>
                     <div class="col-sm-7 text-secondary">
                       <?php echo  "{$row[3]}"; ?>
@@ -138,7 +137,7 @@ session_start();
                       
                     <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Mot de pass</h6>
+                      <h6 class="mb-0">Mot de pass:</h6>
                     </div>
                     <div class="col-sm-7 text-secondary">
                         ***********
@@ -162,7 +161,7 @@ session_start();
                       
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Telephone</h6>
+                      <h6 class="mb-0">Numéro de téléphone</h6>
                     </div>
                     <div class="col-sm-7 text-secondary">
                       <?php echo  "{$row[4]}"; ?>
@@ -174,7 +173,7 @@ session_start();
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Date de naissance</h6>
+                      <h6 class="mb-0">Date de naissance:</h6>
                     </div>
                     <div class="col-sm-7 text-secondary">
                       <?php echo  "{$row[2]}"; ?>
@@ -186,15 +185,15 @@ session_start();
                   <hr>
                   <div class="row">
                     <div class="col-sm-3">
-                      <h6 class="mb-0">Gender</h6>
+                      <h6 class="mb-0">genre</h6>
                     </div>
                     <div class="col-sm-7 text-secondary">
                       <?php 
                         
                         if($row[6] == "f"){
-                            echo "Female";
+                            echo "Femme";
                         }else{
-                            echo "Male";
+                            echo "Homme";
                         }
                         
                         
@@ -215,22 +214,22 @@ session_start();
               
                     <div id="password" class="overlay">
                         <div class="popup">
-                            <h5>Changer mot de pass</h5>
+                            <h5>Changer le mot de passe</h5>
                                 <a class="close" href="#">&times;</a>
                             <div class="content">
                                 <form action='Profile/passwordupdate.php' method="POST">
                                 <table>
                                     <tr>
-                                        <td>Curent password</td><td><input type='text' name="oldpass" placeholder='' ></td>
+                                        <td>mot de passe curent:</td><td><input type='text' name="oldpass" placeholder='mot de passe curent' ></td>
                                     </tr>
                                     <tr>
-                                        <td>New Password</td><td><input type='password' name="newpass1" placeholder='' ></td>
+                                        <td>nouveau mot de passe:</td><td><input type='password' name="newpass1" placeholder='nouveau mot de passe' ></td>
                                     </tr>
                                     <tr>
-                                        <td>Conferm password</td><td><input type='password' name="newpass2" placeholder='' ></td>
+                                        <td>répéter le mot de passe:</td><td><input type='password' name="newpass2" placeholder='répéter le mot de passe' ></td>
                                     </tr>
                                     <tr>    
-                                        <td colspan='2'><input class='valider2' type='submit' value='Valider' ></td>
+                                        <td colspan='2'><center><input class='valider2' type='submit' value='Valider' ></center></td>
                                     </tr>                                
                                 </table>
                                 </form>
@@ -241,13 +240,13 @@ session_start();
               
               <div id="email" class="overlay">
                         <div class="popup">
-                            <h5>Changer Email</h5>
+                            <h5>Changer E-mail</h5>
                                 <a class="close" href="#">&times;</a>
                             <div class="content">
                                 <form action='Profile/emailupdate.php' method='POST'>
                                 <table>
                                     <tr>
-                                        <td>New Email</td><td><input type='text' name='email' placeholder='' ></td>
+                                        <td>nouvel e-mail</td><td><input type='text' name='email' placeholder='' ></td>
                                     </tr>
                                     <tr>    
                                         <td colspan='2'><input class='valider2' type='submit' value='Valider' ></td>
@@ -260,13 +259,13 @@ session_start();
               
               <div id="phone" class="overlay">
                         <div class="popup">
-                            <h5>Changer Telephone</h5>
+                            <h5>Changer numéro de téléphone</h5>
                                 <a class="close" href="#">&times;</a>
                             <div class="content">
                                 <form action='Profile/phoneupdate.php' method='POST' >
                                     <table>
                                         <tr>
-                                            <td>New TelePhone</td><td><input type='text' name="phone" placeholder='' ></td>
+                                            <td>nouveau numéro de téléphone</td><td><input type='text' name="phone" placeholder='' ></td>
                                         </tr>
                                         <tr>    
                                             <td colspan='2'><input class='valider2' type='submit' value='Valider' ></td>
@@ -287,7 +286,7 @@ session_start();
                                 <form action="Profile/dateupdate.php" method="POST">
                                     <table>
                                         <tr>
-                                            <td>Date: </td><td><input type='date' name="date" ></td>
+                                            <td>Date de naissance: </td><td><input type='date' name="date" ></td>
                                         </tr>
                                         <tr>    
                                             <td colspan='2'><input class='valider2' type='submit' value='Valider' ></td>
@@ -309,11 +308,11 @@ session_start();
                                 <form action="Profile/genderupdate.php" method="POST" >
                                     <table>
                                         <tr>
-                                            <td>New Gender</td>
+                                            <td>changer genre</td>
                                             <td>
                                             <select name="genre" >
-                                                <option value='m' >MALE</option>
-                                                <option value='f' >FEMALE</option>
+                                                <option value='m' >Homme</option>
+                                                <option value='f' >Famme</option>
                                             </select>
                                             </td>
                                         </tr>
@@ -348,7 +347,7 @@ session_start();
         </div>
         
         <div class="col-md-12 text-center bg-danger text-dark copyrightbanner">
-            Copyright BOOXCHANGE © 2021. All rights reserved.
+            Copyright BOOXCHANGE © 2021. Tous les droits sont réservés.
         </div>
         
                 

@@ -12,13 +12,14 @@
         <link rel='icon' href='assest/img/favicon.png'>
         <link href="assest/css/bootstrap.css" rel="stylesheet" >
         <link href='assest/css/login-style.css' rel='stylesheet'>
+        <link href='assest/css/profile.css' rel='stylesheet'>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">  
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap" rel="stylesheet">        
         <body>
             <form action="#" method="POST">
-                <h2 class='my-title'>Login Page</h2>
+                <h2 class='my-title'>Page de connexion</h2>
             <div class='container my-login-container'>
                 <div class='row'>
                     <div class='col-md-12 col-sm-6 col-lg-6 col-xs-12 p-0'>
@@ -26,13 +27,13 @@
                     </div>
                     <div class='col-md-12 col-sm-6 col-lg-6 col-xs-12 my-login-side-container'>
                         <div class='my-connexion'>Connexion</div>
-                    <div class='my-input-explainer' >Username:</div>
+                    <div class='my-input-explainer' >E-mail:</div>
                     <div >
-                        <input class='my-input' type="text" name='username' placeholder='Entrez votre Username' required>
+                        <input class='my-input' type="email" name='username' placeholder='tapez votre e-mail' required>
                     </div>
-                    <div class='my-input-explainer' >Mot de pass:</div>
+                    <div class='my-input-explainer' >Mot de passe:</div>
                     <div >
-                        <input class='my-input' type="text" name='password' placeholder='Entrez votre mot de pass' required>
+                        <input class='my-input' type="password" name='password' placeholder='tapez votre mot de passe' required>
                     </div
                     <div>
                     <button type="submit" class="my-btn" >
@@ -45,7 +46,7 @@
         HTML;
 
         if(isset($_GET['P'])){
-            $html .= "<div class='my-alert' >Incorect Password</div>";
+            $html .= "<div style='color: red; font-size: 1.4rem;' class='my-alert' >Mot de passe incorrect</div>";
         }
            
 
@@ -116,7 +117,7 @@
                                 $_SESSION['password'] = $password;
                                 header('Location: home.php');
                             }else{
-                                echo "verifier votre compt par email";
+                                header('Location:login.php#thankyou');
                             }
                         }else{
                             header("Location: login.php?P=1");
@@ -126,7 +127,7 @@
                     }
                  }
              }else{
-                 $html .= "<div class='my-alert' >Problems Connecting to the server :/</div>";
+                 $html .= "<div class='my-alert' >Problèmes de connexion au serveur :/</div>";
              }
          }else{
              //$html .= "l'e-mail et le mot de passe sont requis"; 
@@ -159,3 +160,32 @@ HTML;
     }
      
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                <div id="thankyou" class="overlay">
+                                    <div class="popup">
+                                            <a class="close" href="#">&times;</a>
+                                        <div class="content">
+                                                <br>
+                                            <center><div class="tankyou-titre">Thank You!</div></center>
+                                                <center><p class="paragraph"><strong>Please check your email</strong>
+                                                   <br> To verifier your accout</p></center>
+                                              <hr>
+                                              <center><p class="paragraph2">
+                                                <a class="btn btn-primary btn-sm" href="login.php" role="button">Connexion</a>
+                                                  </p></center>
+                                        </div>
+                                    </div>
+                                </div>

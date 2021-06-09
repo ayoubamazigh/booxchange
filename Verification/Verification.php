@@ -16,14 +16,12 @@
                     $query = "UPDATE Accounts set Enabled = 1 WHERE vkey = '$vkey'";
                     $updated = mysqli_query($connection, $query);
                     if($updated){
-                        header('Location: tankyouverification.html');
+                        header('Location: ../login.php');
                     }else{
                         echo "<center style='margin-top:2rem;font-size: 3rem;' ><p>Something went wrong</p></center>";
                     }
-                    
         }
     }
-            
             
         }
     }

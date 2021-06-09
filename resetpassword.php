@@ -16,22 +16,22 @@
                 <div class='container' >
                 <div class="row">
                 
-                <div class=" col-md-4 input-ex">Enter your Email:</div>
+                <div class=" col-md-4 input-ex">tapez votre e-mail:</div>
                     
                 <div class='col-md-8'>    
-                <input class="my-input" type="email" name='email' placeholder='please enter your email' required></div>
+                <input class="my-input" type="email" name='email' placeholder='tapez votre e-mail' required></div>
                 </div>
                 
                 <div class="row">
-                    <div class="col-md-4 input-ex" >Enter your Vkey:</div>
+                    <div class="col-md-4 input-ex" >Clé de vérification:</div>
                     
-                    <div class='col-md-8'><input class="my-input" type="text" name='vkey' placeholder='please enter your vkey'required ></div>
+                    <div class='col-md-8'><input class="my-input" type="text" name='vkey' placeholder='tapez votre Clé de vérification'required ></div>
                 </div>
                     
                     <div class="row" >
-                  <div class="col-md-4 input-ex" >Enter your new password:</div>
+                  <div class="col-md-4 input-ex" >nouveau mot de passe:</div>
                         
-                    <div class='col-md-8'><input class="my-input" type='text' name='password' placeholder="please enter your new password" required ></div>
+                    <div class='col-md-8'><input class="my-input" type='text' name='password' placeholder="tapez votre nouveau mot de passe" required ></div>
                     </div>
             </div>
             
@@ -80,9 +80,9 @@
             
             
             
-                    <div class='btn my-btn'><input type="submit" value="Reset my password" ></div>
+                    <div  class='btn my-btn'><input class="my-btn-btn" type="submit" value="Réinitialiser mot de passe" ></div>
             </div>
-            
+             
             </center>
         
         </form>
