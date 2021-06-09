@@ -65,7 +65,7 @@
                     -->
                 </ul>
                 <form class='form-inline d-flex'>
-                    <input class='mini-profile-image' type="image" src='assest/img/male.png' >
+                    <image class='mini-profile-image' type="image" src='assest/img/male.png' ></image>
                     <a href="clear.php" ><div class='logout'>Déconnexion </div></a>
                 </form>
             </div>
@@ -513,7 +513,7 @@
             $livrelanguage = $_POST['livre-language'];
             $livreville = $_POST['book-ville'];
             $username = $_SESSION['username'];
-                            echo $titrelivre . $description . $livreauthor . $livrecatigory . $livrelanguage . $livreville;
+            // echo $titrelivre . $description . $livreauthor . $livrecatigory . $livrelanguage . $livreville;
 
             if(!empty($titrelivre) && !empty($description) && !empty($livreauthor) && !empty($livrecatigory) && !empty($livrelanguage) && !empty($livreville)){
                 

@@ -79,7 +79,7 @@ session_start();
                     -->
                 </ul>
                 <form class='form-inline d-flex'>
-                    <a href="profile.php" ><input class='mini-profile-image' type="image" src='<?php if($row[5] == "f"){ echo "assest/img/OIP.jpg"; }else{ echo "assest/img/male.png"; } ?>' ></a>
+                    <a href="profile.php" ><image class='mini-profile-image' type="image" src='<?php if($row[5] == "f"){ echo "assest/img/OIP.jpg"; }else{ echo "assest/img/male.png"; } ?>' ></image></a>
                     <a href="clear.php" ><div class="logout" >Déconnexion</div></a>
                 </form>
             </div>
