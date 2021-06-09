@@ -1,6 +1,5 @@
 <?php
 
-error_reporting(0);
 
         $html = <<<HTML
             
@@ -46,7 +45,7 @@ error_reporting(0);
         HTML;
 
         if(isset($_GET['P'])){
-            $html .= "<p class='font-size: 1.4rem;color:red;' >Incorect Password</p>";
+            $html .= "<div class='my-alert' >Incorect Password</div>";
         }
            
 
@@ -127,10 +126,10 @@ error_reporting(0);
                     }
                  }
              }else{
-                 $exception .= "<p>Problems Connecting to the server :/</p>";
+                 $html .= "<div class='my-alert' >Problems Connecting to the server :/</div>";
              }
          }else{
-             $exception .= "l'e-mail et le mot de passe sont requis"; 
+             //$html .= "l'e-mail et le mot de passe sont requis"; 
              header('location: login.php');
          }
     

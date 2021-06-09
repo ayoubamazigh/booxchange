@@ -15,7 +15,8 @@
                 if($db){
                     $query = "UPDATE user set email = '$email' WHERE email='$username' ";
                     $result1 = mysqli_query($connection, $query);
-                    $query = "UPDATE Accounts set email ='$email', Enabled = 0 WHERE email = '$username' ";
+                    $vkey = md5(time() . $email);
+                    $query = "UPDATE Accounts set email ='$email', vkey = '$vkey' Enabled = 0 WHERE email = '$username' ";
                     $result2 = mysqli_query($connection, $query);
                     
                         if($result1 && $result2){

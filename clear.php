@@ -2,7 +2,6 @@
     session_start();
     setcookie("username", "", time());
     setcookie("password", "", time());
-    unset($_SESSION['password']);
-    unset($_SESSION['username']);
+    session_destroy();
     header('Location: index.php');
 ?>

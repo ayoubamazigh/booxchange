@@ -80,15 +80,14 @@ session_start();
                     -->
                 </ul>
                 <form class='form-inline d-flex'>
-                    <input class='mini-profile-image' type="image" src='<?php echo  "{$row[6]}"; ?>' >
-                    <a href="clear.php" ><input type="image" class='logout' src="assest/img/logout.png" ></a>
+                    <a href="profile.php" ><input class='mini-profile-image' type="image" src='<?php if($row[5] == "f"){ echo "assest/img/OIP.jpg"; }else{ echo "assest/img/male.png"; } ?>' ></a>
+                    <a href="clear.php" ><div class="logout" >Log out</div></a>
                 </form>
             </div>
             
         </nav>
         <div class='bodysep'></div>
                 
-        
         
         
         
@@ -102,7 +101,7 @@ session_start();
                   <div class="card">
                     <div class="card-body">
                       <div class="d-flex flex-column align-items-center text-center">
-                        <img src="<?php echo  "{$row[6]}"; ?>" alt="profile picture" class="rounded-circle main-profile-picture">
+                        <img src="<?php if($row[5] == "f"){ echo "assest/img/OIP.jpg"; }else if($row[5] == 'm'){ echo "assest/img/male.png"; } ?>  " alt="profile picture" class="rounded-circle main-profile-picture">
                         <div class="mt-0">
                           <h4 class="main-name"><?php echo  "{$row[0]} {$row[1]}"; ?></h4>
                           <p class="text-secondary mb-1">Booxchange WebSite</p>
@@ -111,7 +110,6 @@ session_start();
                     </div>
                   </div>
                 </div>
-              
               
               
               

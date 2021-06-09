@@ -9,25 +9,21 @@ body{
     width: 98%;
     margin-left: auto;
     margin-right: auto;
-    background-color: #87d0e0;
+    background-color: #f0f5f4;
     border: 1px solid black;
     box-shadow: 1px 1px 10px;
     border-radius: 4px;
 }
 
-.tankyou{
-    font-size: 4rem;
+.tankyou-titre{
+    font-size: 1rem;
     font-family: 'open sans', sans-serif;
     text-align: center;
-    margin-top: 2rem;
 }
 
 .paragraph{
     font-family: 'open sans', sans-serif;
     text-align: center;
-    margin-top: 1rem;
 }
 
-p{
- text-align: center;
-}
+

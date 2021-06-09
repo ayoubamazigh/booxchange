@@ -17,6 +17,13 @@ label{
 }
 
 
+.my-alert-m{
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 1.4rem;
+    color: red;
+}
+
 
 .my-login-image{
     background-image: url('../img/loginimage.jpg');
