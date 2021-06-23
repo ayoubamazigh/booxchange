@@ -140,24 +140,23 @@
 
     $html .= <<<HTML
          
-                            </center>
-                            <div class='my-checkbox'>               
-                                <input type="checkbox" name='rememberme' value='true' id='chbox'><label for='chbox' >&nbsp;souviens-toi de moi</label>
+                                            </center>
+                                            <div class='my-checkbox'>               
+                                                <input type="checkbox" name='rememberme' value='true' id='chbox'><label for='chbox' >&nbsp;souviens-toi de moi</label>
+                                            </div>
+                                            <div class='my-input-link'>               
+                                                <a class='my-link' href="resetpassword.php" >j'ai oublié le mot de pass.</a>
+                                            </div>
+                                            <div class='my-input-link mt-5 mb-3'>
+                                                <a class='my-link' href="reg.php" ><center>Vous n'êtes pas membre?</center></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class='my-input-link'>               
-                                <a class='my-link' href="resetpassword.php" >j'ai oublié le mot de pass.</a>
-                            </div>
-                            <div class='my-input-link mt-5 mb-3'>
-                                <a class='my-link' href="reg.php" ><center>Vous n'êtes pas membre?</center></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </body>
-</html>
-
+                        </form>
+                    </body>
+                </html>
     HTML;
         echo $html;
     }
