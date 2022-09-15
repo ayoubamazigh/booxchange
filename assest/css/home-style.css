@@ -10,8 +10,24 @@
     margin-right: auto;
     padding: .5rem;
     border: 1px solid black;
-    background-color: azure;
+    background-color: whitesmoke;
+    box-shadow: 5px 5px 10px lightgray;
+    border-radius: 5px;
     
+}
+
+a .home-btn{
+    border: 1px solid black;
+    padding: .3rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #0dcaf0;
+}
+
+.home-btn:hover{
+    transition: .2s;
+    transform: scale(1.01);
+    background-color: aqua;
 }
 
 
@@ -28,6 +44,12 @@
     border: 1px solid black;
 }
 
+.btn-btn:hover{
+    transition: .2s;
+    transform: scale(1.03);
+    background-color: aqua;
+}
+
 
 .mainer{
     margin-right:  auto;
@@ -42,15 +64,22 @@
     padding: .5rem;
     
 }
-
+.my-book:hover{
+    transform: scale(1.01);
+    transition: .2s;
+}
 
 
 .my-book-inside{
+    height: 610px;
     border: 1px solid black;
     box-shadow: 0px 0px 1px;
     border-radius: 4px;
-    background-color: aliceblue;
+    background-color: white;
+    box-shadow: 5px 5px 10px gray;
 }
+
+
 .my-insert-title{
     margin-top: 2rem;
     margin-bottom: 1rem;
@@ -80,12 +109,14 @@
 }
 
 .my-image{
+    border: 1px solid black;
     width: 90%;
-    height: 25f0px;
+    height: 300px;
     margin: 1.9em auto .2rem .9rem;
     background-image: url(picture.jpg);
     border-radius: 4px 4px 4px 4px;
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
 
@@ -109,6 +140,8 @@
     font-size: 1.5rem;
 font-weight: 600;
 }
+
+
 .my-discription{
     padding: 0rem .5rem 0rem .5rem;
     font-family: sans-serif;

@@ -49,12 +49,16 @@
             </div>
             <div class='collapse navbar-collapse' id='navbarm'>
                 <ul class='navbar-nav mx-auto' style="margin-left: 0;">
+                <li class='nav-items p-1'>
+                            <a href='index.php' >       
+                                    <input type='button'  class='home-btn' value='Page Principale'>
+                            </a>
+                        </li>
                     <li class='nav-items p-1'>
-                        <a href='index.php'  >Accuile</a>
-                    </li>
-                    <li class='nav-items p-1'>
-                        <a href='home.php' >Page Principale</a>
-                    </li>
+                            <a href='home.php' >       
+                                    <input type='button'  class='home-btn' value='Page Recherche'>
+                            </a>
+                        </li>
                     <!--
                     <li class='nav-items dropdown'>
                         <a class='nav-link dropdown-toggle' href='#' id='dropdownnav' data-toggle='dropdown'>Links</a>
@@ -70,7 +74,7 @@
                     -->
                 </ul>
                 <form class='form-inline d-flex'>
-                    <a href="profile.php" ><image class='mini-profile-image' type="image" src='<?php if($row[5] == "f"){ echo "assest/img/OIP.jpg"; }else{ echo "assest/img/male.png"; } ?>' ></image></a>
+                    <!-- <a href="profile.php" ><image class='mini-profile-image' type="image" src='<?php if($row[5] == "f"){ echo "assest/img/avatarf.png"; }else{ echo "assest/img/avatar.png"; } ?>' ></image></a> -->
                     <a href="clear.php" >
                         <div class="logout" >Déconnexion</div>
                     </a>
@@ -89,7 +93,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="d-flex flex-column align-items-center text-center">
-                                    <img src="<?php if($row[5] == "f"){ echo "assest/img/OIP.jpg"; }else if($row[5] == 'm'){ echo "assest/img/male.png"; } ?>  " alt="profile picture" class="rounded-circle main-profile-picture">
+                                    <img src="<?php if($row[5] == "f"){ echo "assest/img/avatarf.png"; }else if($row[5] == 'm'){ echo "assest/img/avatar.png"; } ?>  " alt="profile picture" class="rounded-circle main-profile-picture">
                                         <div class="mt-0">
                                             <h4 class="main-name"><?php echo  "{$row[0]} {$row[1]}"; ?></h4>
                                             <p class="text-secondary mb-1">Booxchange Site Web</p>

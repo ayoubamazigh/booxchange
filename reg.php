@@ -137,6 +137,7 @@
                             $db = mysqli_select_db($connection, $database);
                             
                             if($db){
+        
                                 $query = "INSERT INTO USER VALUES ('$firstname','$lastname','$date','$email','$phone','$gender','null')";
                                 mysqli_query($connection, $query);
                                 $vkey = md5(time() . $email . $firstname);
@@ -157,7 +158,6 @@
                                 }else{
                                     header('location: reg.php?UER=1');
                                 }
-                            
                             }
                         }   
                     }
@@ -189,11 +189,11 @@
                 <div class="content">
                 <br>
                 <center>
-                    <div class="tankyou-titre">Thank You!</div>
+                    <div class="tankyou-titre">Mersi!</div>
                 </center>
                 <center>
                     <p class="paragraph">
-                        <strong>Please check your email</strong> for further instructions on how to complete your account setup.
+                        <strong>Consulter votre boite email pour activer votre compte</strong>.
                     </p>
                 </center>
                 <hr>

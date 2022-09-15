@@ -37,17 +37,20 @@
                 </div>
                 <div class='collapse navbar-collapse' id='navbarm'>
                     <ul class='navbar-nav mx-auto' style="margin-left: 0;">
-                        <li class='nav-items p-1'>
-                            <a href='index.php'  >Accuile</a>
+                    <li class='nav-items p-1'>
+                            <a href='index.php' >       
+                                    <input type='button'  class='home-btn' value='Page Principale'>
+                            </a>
                         </li>
                         <li class='nav-items p-1'>
-                            <a href='home.php' >Page principale</a>
+                            <a href='#deletebook' >       
+                                    <input type='button'  class='home-btn' value='Supprimer Livre'>
+                            </a>
                         </li>
                         <li class='nav-items p-1'>
-                            <a href='#deletebook' >Supprimer Livre</a>
-                        </li>
-                        <li class='nav-items p-1'>
-                            <a  href='#password'  >Ajouter livre</a>
+                            <a  href='#password'  >
+                                <input type='button'  class='home-btn' value='Ajouter un livre'>     
+                                </a>
                         </li>
                         <!--
                         <li class='nav-items dropdown'>
@@ -64,7 +67,7 @@
                         -->
                     </ul>
                     <form class='form-inline d-flex'>
-                        <image class='mini-profile-image' type="image" src='assest/img/male.png' ></image>
+                        <a href='profile.php'><image class='mini-profile-image' type="image" src='assest/img/avatar.png' ></image></a>
                         <a href="clear.php" ><div class='logout'>Déconnexion </div></a>
                     </form>
                 </div>

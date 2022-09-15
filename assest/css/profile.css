@@ -10,6 +10,20 @@
     border-radius: 3rem;
 }
 
+.home-btn{
+  border: 1px solid black;
+  padding: .3rem 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  background-color: #0dcaf0;
+}
+
+.home-btn:hover{
+  transition: .2s;
+  transform: scale(1.01);
+  background-color: aqua;
+}
+
 .logout{
     margin-top: 1.3rem;
     margin-left: .7rem;
@@ -97,6 +111,8 @@ td{
 }
 
 .copyrightbanner{
+  position: absolute;
+  bottom: 0;
     width: 100%;
     padding: .1rem 0rem;
     font-family: 'roboto', sans-serif;

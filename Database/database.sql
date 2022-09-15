@@ -34,6 +34,12 @@ CREATE TABLE Book(
     code_user VARCHAR(100) NOT NULL
 )ENGINE = INNODB;
 
+insert into accounts VALUES ('account@booxchange.book','password','XXXXXXXXXXXXXXXXXXXXXX',1);
+INSERT INTO User values ('Mark', 'Steaven', '11-04-2003','account@booxchange.book','+2126XX8696858','m','null');
+
+
+
+
 
 
 

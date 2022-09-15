@@ -23,6 +23,8 @@
             <body>
                 <form action="#" method="POST">
                     <h2 class='my-title'>Page de connexion</h2>
+                    <center>Use this inforamtion to login: email:user@book.com / password: password</center>
+                    <br />
                     <div class='container my-login-container'>
                         <div class='row'>
                             <div class='col-md-12 col-sm-6 col-lg-6 col-xs-12 p-0'>
