@@ -1,3 +1,7 @@
+<img width="1906" height="932" alt="image" src="https://github.com/user-attachments/assets/efd90877-2548-4a3a-8231-c5cbfc877778" />
+
+
+
 # 📚 BOOXCHANGE
 
 BOOXCHANGE is a simple book exchange listing website built in 2021 as a final study project. It was developed using native PHP and basic MySQL database integration.
