@@ -1,6 +1,8 @@
 # 📚 BOOXCHANGE
 
+## About
 BOOXCHANGE is a simple book exchange listing website built in 2021 as a final study project. It was developed using native PHP and basic MySQL database integration.
+
 
 The project allows users to register, log in, and publish or view book listings for exchange purposes.
 
